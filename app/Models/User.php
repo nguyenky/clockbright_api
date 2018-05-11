@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Lcobucci\JWT\Builder;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 /**
  * Class User
  * @package App\Models
@@ -15,7 +16,7 @@ use Lcobucci\JWT\Builder;
  * @property string username
  * @property string access_token
  */
-class User extends Model
+class User extends Authenticatable
 {
 
     public $table = 'users';
