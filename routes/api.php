@@ -23,3 +23,7 @@ Route::resource('roles', 'RoleAPIController');
 Route::resource('users', 'UserAPIController');
 
 Route::resource('profiles', 'ProfileAPIController');
+
+Route::group(['namespace' => 'Authencations','prefix' => 'auths'], function(){
+        Route::post('login', 'LoginController@login');
+});
