@@ -26,4 +26,13 @@ Route::resource('profiles', 'ProfileAPIController');
 
 Route::group(['namespace' => 'Authencations','prefix' => 'auths'], function(){
         Route::post('login', 'LoginController@login');
+       
 });
+
+Route::resource('tasks', 'TaskAPIController');
+Route::get('tasks/list/{id}', 'TaskAPIController@showTasks');
+
+Route::resource('activities', 'ActivityAPIController');
+
+Route::resource('pictures', 'PictureAPIController');
+Route::post('pictures/uploadImage', 'PictureAPIController@saveImage');

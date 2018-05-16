@@ -56,6 +56,7 @@ class UserAPIController extends AppBaseController
         $input = $request->all();
 
         $user = $this->userRepository->create($input);
+        $user->password = bcrypt($user->password);
         $user->generateAccessToken();
         $user->save();
         $user->profile()->create();

@@ -63,10 +63,15 @@ class User extends Authenticatable
                         ->set('email',$this->email) 
                         ->getToken(); 
     }
+
     public function profile(){
 
         return $this->hasOne(\App\Models\Profile::class);
         
+    }
+
+    public function tasks(){
+        return $this->hasMany(\App\Models\Task::class);
     }
     
 }
